@@ -1,3 +1,10 @@
+'''
+This script reads in .xyz coordinate files for molecules, locates the 
+sigma and epsilon parameters for each of its atom types from a .rtf file
+based on the arguments in a .str file, and then generates a charm force-field
+file which can be used in the ABCluster program.
+'''
+
 import os
 import sys
 import fileinput
@@ -74,14 +81,11 @@ for i in range(len(atomtypes)):
 			break
 f3.close()
 
-#creates new epsilon and sigma arrays and casts strings from old array into floats (NOT WORKING)
 epsilonfloat = []
 sigmafloat = []
 for i in range(len(epsilon)):
 	epsilonfloat.append(float(epsilon[i]))
 	sigmafloat.append(float(sigma[i]))
-
-#Note to Minh -- For some reason, the block of code above this comment is changing the values when it casts the strings into floats
 
 #multiplies the epsilon and sigma values by constants
 for i in range(len(epsilonfloat)):
