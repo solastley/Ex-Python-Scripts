@@ -1,3 +1,5 @@
+#This script takes the output from a PM7 calculation and creates a new .xyz file from it
+
 import os
 import sys
 import fileinput

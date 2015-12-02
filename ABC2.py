@@ -1,3 +1,11 @@
+'''
+This script takes the output from a PM7 calculation, finds the final set of coordinates after a
+molecular geometry optimization, and prints them to a new file. The script then uses a corresponding
+.str file to produce charges and atom types for all of the atoms in the molecule and searches through a
+document that produces epsilon and sigma parameters that are necessary to produce charm files. The script
+combines all of this data into a properly-formatted charm force-field file.
+'''
+
 import os
 import sys
 import fileinput
